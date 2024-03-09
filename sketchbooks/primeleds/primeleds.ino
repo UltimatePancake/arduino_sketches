@@ -60,43 +60,29 @@ void blink (int n) {
     digitalWrite(LED_BUILTIN, LOW);
 }
 
-void feedback (int n) {
-    if (n < 1 && n > 4) {
-        blink(500);
-    }
-
-    for (int i = 1; i == n; ++i) {
-        blink(100);
-    }
-}
-
 void loop() {
     int i = 1;
 
     do {
         if (decideLed(i) == 0) {
-            feedback(1);
             /* if even and not prime */
             digitalWrite(LED_EVEN, HIGH);
             digitalWrite(LED_ODD, LOW);
             digitalWrite(LED_PRIME, LOW);
             Serial.println(String(i) + " :: EVEN");
         } else if (decideLed(i) == 1) {
-            feedback(2);
             /* if odd and not prime */
             digitalWrite(LED_EVEN, LOW);
             digitalWrite(LED_ODD, HIGH);
             digitalWrite(LED_PRIME, LOW);
             Serial.println(String(i) + " :: ODD");
         } else if (decideLed(i) == 2) {
-            feedback(3);
             /* if even and prime */
             digitalWrite(LED_EVEN, HIGH);
             digitalWrite(LED_ODD, LOW);
             digitalWrite(LED_PRIME, HIGH);
             Serial.println(String(i) + " :: EVEN / PRIME");
         } else if (decideLed(i) == 3) {
-            feedback(4);
             /* if odd and prime */
             digitalWrite(LED_EVEN, LOW);
             digitalWrite(LED_ODD, HIGH);
