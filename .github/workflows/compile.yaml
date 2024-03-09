@@ -1,5 +1,7 @@
 on:
-  - push
+  push:
+    paths:
+      - sketchbooks/**
 
 jobs:
   compile-sketch:
