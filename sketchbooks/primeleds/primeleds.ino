@@ -54,12 +54,6 @@ void turnOffAllLeds() {
     digitalWrite(LED_PRIME, LOW);
 }
 
-void blink (int n) {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(n);
-    digitalWrite(LED_BUILTIN, LOW);
-}
-
 void loop() {
     int i = 1;
 
